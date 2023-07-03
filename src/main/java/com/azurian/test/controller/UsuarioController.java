@@ -30,12 +30,12 @@ public class UsuarioController {
 	//Create a new user
 	@GetMapping("/add")
 	public String add(Usuario usuario) {
-		return "add.html";
+		return "add";
 	}
 	@PostMapping("/create")
 	public String create(@Valid Usuario usuario, Errors errors) {
 		if(errors.hasErrors()) {
-			return "/add.html";
+			return "/add";
 		}
 			usuarioService.save(usuario);
 			return "redirect:/";
@@ -44,7 +44,7 @@ public class UsuarioController {
 	public String list(Model model){
 		Iterable<Usuario> usuarios = usuarioService.findAll();
 		model.addAttribute("usuarios",usuarios);
-		return "index.html";	
+		return "/app";	
 	}
 	
 	
