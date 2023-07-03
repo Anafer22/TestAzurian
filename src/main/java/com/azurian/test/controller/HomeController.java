@@ -13,7 +13,6 @@ public class HomeController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
-	
 		@GetMapping( path = "/")
 		public String infoUser(Usuario usuario, Model model){
 			Iterable<Usuario> usuarios = usuarioService.findAll();

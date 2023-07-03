@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>CRUD</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+	
+	<!-- Template Main CSS File -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+	rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+	crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-light bg-light justify-content-end">
+		<form class="buscar d-flex" th:action="@{/usuario/fnd}" th:method="get"
+			th:object="${usuario}">
+			<input class="form-control me-2" type="search" name="curp"
+				th:field="*{curp}" placeholder="Buscar" aria-label="Buscar">
+			<button class="btn btn-outline-dark" type="submit">Buscar</button>
+		</form>
+
+	</nav>
+	<br>
+	<div class="container mt-4" >
+		<h1>TABLA USUARIOS</h1>
+		<a th:href="@{usuario/add}" class="btn btn-success my-2" >Crear</a>
+		<div class="table-responsive">
+		<table class="table" id="tablita">
+		<!-- Encabezados de la tabla -->
+			<thead>
+				<tr class="table-success">
+				    <th scope="col">Curp</th>
+					<th scope="col">Nombre</th>
+					<th scope="col" class="d-none d-sm-table-cell">Apellido paterno</th>
+					<th scope="col" class="d-none d-sm-table-cell">Apellido materno</th>
+					<th scope="col" class="d-none d-sm-table-cell">Número Telefono</th>
+					<th scope="col">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each=" usuario: ${usuarios}">
+				    <td th:text="${usuario.curp}"></td>
+					<td th:text="${usuario.nombre}"></td>
+					<td th:text="${usuario.apellido_paterno}" class="d-none d-sm-table-cell"></td>
+					<td th:text="${usuario.apellido_materno}" class="d-none d-sm-table-cell"></td>
+					<td th:text="${usuario.numero_telefono}" class="d-none d-sm-table-cell"></td> 
+					<td class="text-center">
+					     <a th:href="@{'usuario/upd/'} + ${usuario.curp}" class="btn btn-primary" >Actualizar</a>
+					     <a th:href="@{'usuario/del/'} + ${usuario.curp}" class="btn btn-danger" >Eliminar</a>
+					
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</div>
+</body>
+</html>
