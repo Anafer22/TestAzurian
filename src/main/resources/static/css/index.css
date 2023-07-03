@@ -20,6 +20,7 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 .iconos{
 	width: 40px;
@@ -30,3 +31,4 @@ h6 {
 	color: #1bbd36;
 	font-size: 0.7rem;
 }
+

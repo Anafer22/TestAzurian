@@ -16,53 +16,59 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
-	<div class="row justify-content-center pt-5 mt-5 mr-1">
-			<h1 class="mb-4 ">Registrar</h1>
-			<form th:action=@{/usuario/create} method="post"
-				th:object="${usuario}">
-				<div class="row">
-					<div class="col-md-6 mb-4">
-						<input type="text" class="form-control" name="Curp"
-							th:field="*{curp}" placeholder="curp*" /> <span class="spanE"
-							th:if="${#fields.hasErrors('curp')}" th:errorclass="error"
-							th:errors="*{curp}">Error Curp</span>
-					</div>
-					<div class="col-md-6 mb-4">
-						<input type="text" class="form-control" placeholder="Nombre*"
-							name="nombre" th:field="*{nombre}" /> <span class="spanE"
-							th:if="${#fields.hasErrors('nombre')}" th:errorclass="error"
-							th:errors="*{nombre}">Error Nombre</span>
-					</div>
-					<div class="col-md-6 mb-4">
-						<input type="text" class="form-control"
-							placeholder="Apellido paterno*" name="apellido_p"
-							th:field="*{apellido_paterno}" /> <span class="spanE"
-							th:if="${#fields.hasErrors('apellido_paterno')}"
-							th:errorclass="error" th:errors="*{apellido_paterno}">Error
-							Apellido Paterno</span>
-					</div>
-					<div class="col-md-6 mb-4">
-						<input type="text" class="form-control"
-							placeholder="Apellido materno" name="apellido_materno"
-							th:field="*{apellido_materno}" /> <span class="spanE"
-							th:if="${#fields.hasErrors('apellido_materno')}"
-							th:errorclass="error" th:errors="*{apellido_materno}">Error
-							Apellido Materno</span>
-					</div>
-					<div class="col-md-6 mb-4">
-						<input class="form-control" type="text"
-							placeholder="Numero telefono" name="numero_telefono"
-							th:field="*{numero_telefono}"> <span class="spanE"
-							th:if="${#fields.hasErrors('numero_telefono')}"
-							th:errorclass="error" th:errors="*{numero_telefono}">Error
-							Telefono Movil</span>
+		<div class="container mt-5 my-5 px-4">
+			<div class="row d-flex justify-content-center align-items-center">
+					<div class="card  my-2">
+						<div class="col-xl-6">
+							<div class="card-body p-md-5 text-black">
+								<h1 class="mb-4 ">Registrar</h1>
+								<form th:action=@{/usuario/create} method="post"
+									th:object="${usuario}">
+									<div class="row">
+										<div class="col-md-6 mb-4">
+											<input type="text" class="form-control" name="Curp"
+												th:field="*{curp}" placeholder="Curp*" /> <span
+												class="spanE" th:if="${#fields.hasErrors('curp')}"
+												th:errorclass="error" th:errors="*{curp}">Error Curp</span>
+										</div>
+										<div class="col-md-6 mb-4">
+											<input type="text" class="form-control" placeholder="Nombre*"
+												name="nombre" th:field="*{nombre}" /> <span class="spanE"
+												th:if="${#fields.hasErrors('nombre')}" th:errorclass="error"
+												th:errors="*{nombre}">Error Nombre</span>
+										</div>
+										<div class="col-md-6 mb-4">
+											<input type="text" class="form-control"
+												placeholder="Apellido paterno*" name="apellido_p"
+												th:field="*{apellido_paterno}" /> <span class="spanE"
+												th:if="${#fields.hasErrors('apellido_paterno')}"
+												th:errorclass="error" th:errors="*{apellido_paterno}">Error
+												Apellido Paterno</span>
+										</div>
+										<div class="col-md-6 mb-4">
+											<input type="text" class="form-control"
+												placeholder="Apellido materno" name="apellido_materno"
+												th:field="*{apellido_materno}" /> <span class="spanE"
+												th:if="${#fields.hasErrors('apellido_materno')}"
+												th:errorclass="error" th:errors="*{apellido_materno}">Error
+												Apellido Materno</span>
+										</div>
+										<div class="col-md-6 mb-4">
+											<input class="form-control" type="text"
+												placeholder="Numero telefono" name="numero_telefono"
+												th:field="*{numero_telefono}"> <span class="spanE"
+												th:if="${#fields.hasErrors('numero_telefono')}"
+												th:errorclass="error" th:errors="*{numero_telefono}">Error
+												Telefono Movil</span>
+										</div>
+									</div>
+									<br>
+									<button class="btn btn-outline-success" type="submit">Guardar</button>
+							</div>
+							</form>
+						</div>
 					</div>
 				</div>
-				<br>
-				<button class="btn btn-outline-success" type="submit">Guardar</button>
-		</div>
-		</form>
-	</div>
+			</div>
 </body>
 </html>
